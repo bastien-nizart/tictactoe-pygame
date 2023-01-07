@@ -9,6 +9,9 @@
 Ce petit programme lance un tic tac toe basique développé 
 en **python** avec la librairie *pygame*
 
+![demo](./assets/demo.gif)
+
+
 ## Architecture du projet
 
 ```
