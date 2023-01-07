@@ -58,6 +58,9 @@ while running:
                     print(f"joueur {winner} tu as gagné !")
                     running = False
 
+                if check_full(score):
+                    running = False
+
                 actual_player_id = switch_player(Game.PLAYERS.value[actual_player_id])
                 pygame.display.set_caption(f"Joueur {Game.PLAYERS.value[actual_player_id]} à toi de jouer")
             else:

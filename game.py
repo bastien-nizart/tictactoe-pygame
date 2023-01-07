@@ -47,3 +47,11 @@ def check(score) -> tuple:
         return cond, winner
 
     return False, None
+
+
+def check_full(score) -> bool:
+    for line in score:
+        for case in line:
+            if case == '':
+                return False
+    return True
