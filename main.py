@@ -1,11 +1,11 @@
 import random
-import pygame
-from const import Color
-from game import *
-from const import Game
+from app.const import Color
+from app.game import *
+from app.const import Game
+from app.player import *
 
 
-# Set the game constants
+players = [Player('o', './assets/circle.png'), Player('x', './assets/cross.png')]
 actual_player_id = random.randint(0, 1)
 score = [['', '', ''], ['', '', ''], ['', '', '']]
 
@@ -13,7 +13,7 @@ score = [['', '', ''], ['', '', ''], ['', '', '']]
 # Set up the main window
 pygame.init()
 screen = pygame.display.set_mode([Game.SCREEN_SIZE.value, Game.SCREEN_SIZE.value])
-pygame.display.set_caption(f"Joueur {Game.PLAYERS.value[actual_player_id]} tu commences")
+pygame.display.set_caption(f"Joueur {players[actual_player_id].name} tu commences")
 
 screen.fill(Color.WHITE.value)
 
@@ -22,11 +22,6 @@ pygame.draw.line(screen, Color.BLACK.value, (175, 25), (175, 475), 1)
 pygame.draw.line(screen, Color.BLACK.value, (325, 25), (325, 475), 1)
 pygame.draw.line(screen, Color.BLACK.value, (25, 175), (475, 175), 1)
 pygame.draw.line(screen, Color.BLACK.value, (25, 325), (475, 325), 1)
-
-sprites = [
-    pygame.image.load(Game.TOKEN_IMAGE.value[0]),
-    pygame.image.load(Game.TOKEN_IMAGE.value[1])
-]
 
 
 # Run until the user asks to quit
@@ -50,8 +45,8 @@ while running:
                 line = 1
 
             if score[line][col] == '':
-                score[line][col] = Game.PLAYERS.value[actual_player_id]
-                screen.blit(sprites[actual_player_id], Game.TOKEN_POSITION.value[line][col])
+                score[line][col] = players[actual_player_id].name
+                screen.blit(players[actual_player_id].sprite, Game.TOKEN_POSITION.value[line][col])
 
                 cond, winner = check(score)
                 if cond:
@@ -61,11 +56,11 @@ while running:
                 if check_full(score):
                     running = False
 
-                actual_player_id = switch_player(Game.PLAYERS.value[actual_player_id])
-                pygame.display.set_caption(f"Joueur {Game.PLAYERS.value[actual_player_id]} à toi de jouer")
+                actual_player_id = switch_player(actual_player_id)
+                pygame.display.set_caption(f"Joueur {players[actual_player_id].name} à toi de jouer")
             else:
                 pygame.display.set_caption(
-                    f"Joueur {Game.PLAYERS.value[actual_player_id]} à toi de jouer (case déjà prise)"
+                    f"Joueur {players[actual_player_id].name} à toi de jouer (case déjà prise)"
                 )
 
     pygame.display.flip()

@@ -1,8 +1,5 @@
-from const import Game
-
-
-def switch_player(player: str) -> int:
-    if player == Game.PLAYERS.value[0]:
+def switch_player(id_player: int) -> int:
+    if id_player == 0:
         return 1
     return 0
 
