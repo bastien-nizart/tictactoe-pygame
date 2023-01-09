@@ -18,7 +18,7 @@ en **python** avec la librairie *pygame*
 ├── assets
 │   ├── circle.png
 │   └── cross.png
-├── game
+├── app
 │   ├── const.py
 │   ├── player.py
 │   └── game.py
