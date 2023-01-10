@@ -1,9 +1,9 @@
 # Tic Tac Toe
 
-![license](https://img.shields.io/badge/license-mit-green)
-![python-version](https://img.shields.io/badge/python-v3.9-success)
-![module](https://img.shields.io/badge/pip-pygame-critical)
-![size](https://img.shields.io/badge/assets_size-1.55kB-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![python-version](https://img.shields.io/badge/Language-Python_v3.9-success)
+![module](https://img.shields.io/badge/Librairies-PyGame-critical)
+![size](https://img.shields.io/badge/Assets_Size-1.55kB-blue)
 
 
 Ce petit programme lance un tic tac toe basique développé 
