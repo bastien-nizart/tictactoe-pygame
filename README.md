@@ -18,8 +18,10 @@ en **python** avec la librairie *pygame*
 ├── assets
 │   ├── circle.png
 │   └── cross.png
-├── const.py
-├── game.py
+├── app
+│   ├── const.py
+│   ├── player.py
+│   └── game.py
 ├── main.py
 └── requirements.txt
 ```
