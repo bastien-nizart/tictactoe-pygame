@@ -9,7 +9,7 @@
 Ce petit programme lance un tic tac toe basique développé 
 en **python** avec la librairie *pygame*
 
-![demo](./assets/demo.gif)
+![demo](https://bastien.nizart.me/projects/tictactoe-pygame/demo.gif)
 
 
 ## Architecture du projet
@@ -44,15 +44,13 @@ le code couleur est un tuple au format rgb. Exemple :
 
 ```python
 class Color(Enum):
-    WHITE = (231, 242, 0)
+    COLOR = (231, 242, 0)
 ```
 
 Les quatre constantes générales sont :
 ```python
 class Game(Enum):
     SCREEN_SIZE = 500
-    PLAYERS = ('x', 'o')
-    TOKEN_IMAGE = ['./assets/cross.png', './assets/circle.png']
     TOKEN_POSITION = [
         [(50, 50), (200, 50), (350, 50)],
         [(50, 200), (200, 200), (350, 200)],
@@ -62,6 +60,4 @@ class Game(Enum):
 
 Elles représentent :
 - ``SCREEN_SIZE`` la taille de la fenêtre *(en pixel)*
-- ``PLAYERS`` la liste des joueurs
-- `TOKEN_IMAGE` la source des sprites de chaque joueur
 - `TOKEN_POSITION` la différente position des sprites sur le plateau
